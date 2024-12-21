@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./srceen/home/Home";
 import { Analytics } from "@vercel/analytics/react";
+import './index.css';  // นำเข้าไฟล์ CSS ที่มีฟอนต์ Kanit
 
 export default function App() {
   return (
