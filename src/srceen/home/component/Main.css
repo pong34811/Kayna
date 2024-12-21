@@ -5,7 +5,7 @@
     width: 100%;
     height: 100vh;
     background-color: #d2374e; /* พื้นหลังสี */
-    background-image: url('http://localhost:3000/kayna_maid_bg.png');
+    background-image: url('https://kayna.vercel.app/kayna_maid_bg.png');
     background-repeat: no-repeat;
     animation: slideUpWithFade 2s 1s forwards; /* แอนิเมชันสำหรับข้อความที่สอง */
 
