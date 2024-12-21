@@ -1,0 +1,96 @@
+.container-main-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #d2374e; /* พื้นหลังสี */
+    background-image: url('http://localhost:3000/kayna_maid_bg.png');
+    background-repeat: no-repeat;
+    animation: slideUpWithFade 2s 1s forwards; /* แอนิเมชันสำหรับข้อความที่สอง */
+
+    background-position: 50% 25%;
+    .main-col{
+        display: flex;
+        .main-p-1 {
+            position: absolute; 
+            top: 50px;
+            left: 30px;
+            font-size: 80px;
+            font-weight: bold;  
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงาข้อความ */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* จัดข้อความให้อยู่ตรงกลาง */
+            align-items: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+            animation: slideUpWithRotate 5s 1s infinite; /* แอนิเมชันสำหรับข้อความแรก */
+
+
+        }
+        .main-p-2 {
+            top: 200px;
+            right: 80px;
+            position: absolute;
+            font-size: 80px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงาข้อความ */
+            display: flex;
+            flex-direction: column; /* ใช้ flex เพื่อจัดเรียงข้อความในแนวตั้ง */
+            align-items: center; /* จัดให้ข้อความอยู่ตรงกลาง */
+            line-height: 1.2; /* ปรับระยะห่างระหว่างบรรทัด */
+            animation: slideUpWithRotate 5s 1s infinite; /* แอนิเมชันสำหรับข้อความที่สอง */
+
+
+        }
+
+        
+    }
+
+}
+
+/* แอนิเมชันการเคลื่อนย้ายข้อความขึ้น */
+
+@keyframes slideUpWithFade {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUpWithRotate {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.8) rotate(10deg);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(10px) scale(1.05) rotate(-5deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(0);
+    }
+  }
+  
+  /* แอนิเมชันการเปลี่ยนสีพื้นหลัง */
+@keyframes backgroundColorChange {
+    0% {
+      background-color: #d2374e; /* สีเริ่มต้น */
+    }
+    50% {
+      background-color: #4e237d; /* สีเปลี่ยนกลาง */
+    }
+    100% {
+      background-color: #d2374e; /* กลับไปที่สีเริ่มต้น */
+    }
+  }
