@@ -1,21 +1,19 @@
 .container-main-home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: #d2374e; /* พื้นหลังสี */
-    background-image: url('https://kayna.vercel.app/kayna_maid_bg.png');
-    background-repeat: no-repeat;
-    animation: slideUpWithFade 2s 1s forwards; /* แอนิเมชันสำหรับข้อความที่สอง */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  animation: fadeInBackground 3s ease-in-out forwards;
+  background-position: 50% 25%;
 
-    background-position: 50% 25%;
     .main-col{
         display: flex;
         .main-p-1 {
             position: absolute; 
-            top: 50px;
-            left: 30px;
+            top: 0;
+            left: 0;
+            margin: 40px;
             font-size: 80px;
             font-weight: bold;  
             color: #fff;
@@ -24,13 +22,14 @@
             flex-direction: column;
             justify-content: center; /* จัดข้อความให้อยู่ตรงกลาง */
             align-items: center; /* จัดข้อความให้อยู่กึ่งกลาง */
-            animation: slideUpWithRotate 5s 1s infinite; /* แอนิเมชันสำหรับข้อความแรก */
+            animation: bounceIn 2s ease-in-out forwards;
 
 
         }
         .main-p-2 {
-            top: 200px;
-            right: 80px;
+            bottom: 0;
+            right: 0;
+            margin: 40px;
             position: absolute;
             font-size: 80px;
             font-weight: bold;
@@ -40,9 +39,7 @@
             flex-direction: column; /* ใช้ flex เพื่อจัดเรียงข้อความในแนวตั้ง */
             align-items: center; /* จัดให้ข้อความอยู่ตรงกลาง */
             line-height: 1.2; /* ปรับระยะห่างระหว่างบรรทัด */
-            animation: slideUpWithRotate 5s 1s infinite; /* แอนิเมชันสำหรับข้อความที่สอง */
-
-
+            animation: bounceIn 2s ease-in-out forwards;
         }
 
         
@@ -52,45 +49,70 @@
 
 /* แอนิเมชันการเคลื่อนย้ายข้อความขึ้น */
 
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(-200px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05) translateY(10px);
+    }
+    70% {
+        transform: scale(0.9) translateY(-5px);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
 @keyframes slideUpWithFade {
     0% {
-      opacity: 0;
-      transform: translateY(30px);
+        opacity: 0;
+        transform: translateY(30px);
     }
     50% {
-      opacity: 0.5;
-      transform: translateY(10px);
+        opacity: 0.5;
+        transform: translateY(10px);
     }
     100% {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
-  @keyframes slideUpWithRotate {
+}
+
+@keyframes slideUpWithRotate {
     0% {
-      opacity: 0;
-      transform: translateY(30px) scale(0.8) rotate(10deg);
+        opacity: 0;
+        transform: translateY(30px) scale(0.8) rotate(10deg);
     }
     50% {
-      opacity: 0.5;
-      transform: translateY(10px) scale(1.05) rotate(-5deg);
+        opacity: 0.5;
+        transform: translateY(10px) scale(1.05) rotate(-5deg);
     }
     100% {
-      opacity: 1;
-      transform: translateY(0) scale(1) rotate(0);
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0);
     }
-  }
-  
-  /* แอนิเมชันการเปลี่ยนสีพื้นหลัง */
+}
+
 @keyframes backgroundColorChange {
     0% {
-      background-color: #d2374e; /* สีเริ่มต้น */
+        background-color: #d2374e;
     }
     50% {
-      background-color: #4e237d; /* สีเปลี่ยนกลาง */
+        background-color: #4e237d;
     }
     100% {
-      background-color: #d2374e; /* กลับไปที่สีเริ่มต้น */
+        background-color: #d2374e;
     }
-  }
+}
