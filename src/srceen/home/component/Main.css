@@ -28,68 +28,67 @@
     }
 
     .main-p-2 {
+      position: absolute;
+      top: 25%;
+      left: 0;
+      margin: 40px;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+      h1 {
+        color: white;
+        margin: 20px 0px 20px;
+        font-size: 75px;
+      }
+      h3 {
+        color: white;
+        font-size: 25px;
+        margin-bottom: 50px;
+      }
+      h4 {
+        color: #fcfc;
+        letter-spacing: 2px;
+        font-size: 20px;
+      }
+
+      .main-p-3 {
         position: absolute;
-        top: 45%;
-        left: 0;
-        margin: 40px;
-        transform: translateY(-20%);
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 
-        h1{
-            color: white;
-            margin: 20px 0px 20px;
-            font-size: 75px;
-        }
-        h3{
-            color: white;
-            font-size: 25px;
-            margin-bottom: 50px;
-        }
-        h4{
-            color: #fcfc;
-            letter-spacing: 2px;
-            font-size: 20px;
-        }
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+      }
 
-        .main-p-3 {
-            position: absolute;
+      .main-p-3 .btn-youtube,
+      .main-p-3 .btn-tiktik,
+      .main-p-3 .btn-facebook {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
 
-            display: flex;
-            align-items: flex-end;
-            gap: 10px;
-        }
-        
-        .main-p-3 .btn-youtube,
-        .main-p-3 .btn-tiktik,
-        .main-p-3 .btn-facebook {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        
-        .main-p-3 .btn-youtube {
-            background-color: #ff0000;
-        }
-        
-        .main-p-3 .btn-tiktik {
-            background-color: #000000;
-        }
-        
-        .main-p-3 .btn-facebook {
-            background-color: #3b5998;
-        }
-        
-        .main-p-3 .btn-youtube:hover,
-        .main-p-3 .btn-tiktik:hover,
-        .main-p-3 .btn-facebook:hover {
-            transform: scale(1.05);
-            opacity: 0.8;
-        }
+      .main-p-3 .btn-youtube {
+        background-color: #ff0000;
+      }
+
+      .main-p-3 .btn-tiktik {
+        background-color: #000000;
+      }
+
+      .main-p-3 .btn-facebook {
+        background-color: #3b5998;
+      }
+
+      .main-p-3 .btn-youtube:hover,
+      .main-p-3 .btn-tiktik:hover,
+      .main-p-3 .btn-facebook:hover {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
     }
   }
 }

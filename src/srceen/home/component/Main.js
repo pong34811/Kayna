@@ -13,28 +13,59 @@ function Main() {
 
   return (
     <div className="container-main-home" style={backgroundImage}>
-      <div className="main-col">
-        <div className="main-p-1">
-          <h2 class="logo">
-            Intro<span>duction</span>
-          </h2>
-        </div>
-        <div class="main-p-2">
-          <h4>Nice to meet you, Hello</h4>
-          <h1>
-            My name is <span>Kayna</span>
-          </h1>
-          <h3>I'am a Ghoul :D.</h3>
-          <div className="main-p-3">
-            <Link to="https://www.youtube.com/@KaynaVtuberTH" className="btn-youtube" target="_blank">
+      <div className="container-main-home-text">
+        <div className="">
+          <div>
+            <h2>
+              Intro<span>duction</span>
+            </h2>
+          </div>
+          <div>
+            <h4>Nice to meet you, Hello</h4>
+            <h1>
+              My name is <span>Kayna</span>
+            </h1>
+            <h3>I'am a Ghoul :D.</h3>
+          </div>
+          <div>
+            <a
+              href="https://www.youtube.com/@KaynaVtuberTH"
+              className="btn-youtube"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Youtube
-            </Link>
-            <Link to="https://www.tiktok.com/@kayna_channel" className="btn-tiktik" target="_blank">
+            </a>
+            <a
+              href="https://www.tiktok.com/@kayna_channel"
+              className="btn-tiktik"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Tiktok
-            </Link>
-            <Link to="https://www.facebook.com/KaynaVTB" className="btn-facebook" target="_blank">
+            </a>
+            <a
+              href="https://www.facebook.com/KaynaVTB"
+              className="btn-facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Facebook
-            </Link>
+            </a>
+          </div>
+          <div className="">
+            <div>
+              <h2>Follow</h2>
+              <span>2000</span>
+            </div>
+            <div>
+              <h2>Video</h2>
+              <span>500</span>
+            </div>
+            <div>
+              <h2>View</h2>
+              <span>10000000</span>
+            </div>
           </div>
         </div>
       </div>
