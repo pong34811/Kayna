@@ -1,8 +1,9 @@
 import React from "react";
 
-import Main from "./component/Main";
+import Introduction from "./component/Introduction";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
+import About from "./component/About";
 
 
 
@@ -10,7 +11,8 @@ function Home() {
   return (
     <div>
       <Header />
-      <Main />
+      <Introduction />
+      <About />
       <Footer />
     </div>
   );
