@@ -1,14 +1,12 @@
 import React from "react";
-import "./Main.css";
 import { Link } from "react-router-dom";
-
+import "./Introduction.css";
 function Main() {
+  const isMobile = window.innerWidth <= 768;
+
   const backgroundImage = {
     backgroundImage: `url(${process.env.PUBLIC_URL}/kayna_maid_bg.png)`,
-    backgroundRepeat: "no-repeat",
-    height: "120vh",
-    width: "100%",
-    backgroundSize: "cover",
+    backgroundPosition: isMobile ? "center" : "25% 50%", // เปลี่ยนตำแหน่งตามขนาดหน้าจอ
   };
 
   return (
@@ -24,33 +22,30 @@ function Main() {
           <h1>
             My name is <span>Kayna</span>
           </h1>
-          <h3>I'am Vtuber Thailand</h3>
+          <h3>I'am Vtuber From Thailand</h3>
           <div className="social-media">
-          <Link
-            to={"https://www.youtube.com/@KaynaVtuberTH"}
-            className="btn-youtube"
-            target="_blank"
-
-          >
-            Youtube
-          </Link>
-          <Link
-            to={"https://www.tiktok.com/@kayna_channel"}
-            className="btn-tiktik"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tiktok
-          </Link>
-          <Link
-            to={"https://www.facebook.com/KaynaVTB"}
-            className="btn-facebook"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Facebook
-          </Link>
-        </div>
+            <Link
+              to={"https://www.youtube.com/@KaynaVtuberTH"}
+              className="btn-youtube"
+              target="_blank"
+            >
+              Youtube
+            </Link>
+            <Link
+              to={"https://www.tiktok.com/@kayna_channel"}
+              className="btn-tiktik"
+              target="_blank"
+            >
+              Tiktok
+            </Link>
+            <Link
+              to={"https://www.facebook.com/KaynaVTB"}
+              className="btn-facebook"
+              target="_blank"
+            >
+              Facebook
+            </Link>
+          </div>
         </div>
         <div className="status-youtube">
           <div className="youtube-follow">

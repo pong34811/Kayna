@@ -1,3 +1,10 @@
+.container-main-home {
+  height: 120vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
 .main-col {
   display: flex;
   justify-content: flex-start;
@@ -47,14 +54,17 @@
     }
   }
 
-  .social-media ,a {
+  .social-media,
+  a {
     display: inline-block;
     font-size: 18px;
     font-weight: bold;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    .btn-youtube, .btn-tiktik, .btn-facebook {
+    .btn-youtube,
+    .btn-tiktik,
+    .btn-facebook {
       padding: 10px 20px;
       margin: 5px;
       transition: background-color 0.3s ease;
@@ -81,22 +91,21 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
+
   .status-youtube div {
     text-align: center;
     margin: 0 10px;
   }
-  
+
   .status-youtube h2 {
     font-size: 35px;
     margin: 0;
     font-weight: bold;
   }
-  
+
   .status-youtube span {
     font-size: 20px;
     margin-top: 5px;
     display: block;
   }
 }
-
