@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Introduction.css";
-function Main() {
-  const isMobile = window.innerWidth <= 768;
+
+const Main = () => {
+  const [channelData, setChannelData] = useState({
+    subscriberCount: 0,
+    videoCount: 0,
+    viewCount: 0,
+  });
+
+  useEffect(() => {
+    fetch(
+      "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=UCC_P34t35REbiPzbHO_bifA&key=AIzaSyDcsfn7EkqklHYJwMS83-mfm7_O0uDHJAc"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const { subscriberCount, videoCount, viewCount } = data.items[0].statistics;
+        setChannelData({ subscriberCount, videoCount, viewCount });
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
 
   const backgroundImage = {
     backgroundImage: `url(${process.env.PUBLIC_URL}/kayna_maid_bg.png)`,
-    backgroundPosition: isMobile ? "center" : "25% 50%", // เปลี่ยนตำแหน่งตามขนาดหน้าจอ
+    height: "120vh",
+    width: "100%",
+    backgroundPosition: "25% 50%",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
   };
 
   return (
@@ -24,46 +45,49 @@ function Main() {
           </h1>
           <h3>I'am Vtuber From Thailand</h3>
           <div className="social-media">
-            <Link
-              to={"https://www.youtube.com/@KaynaVtuberTH"}
+            <a
+              href="https://www.youtube.com/@KaynaVtuberTH"
               className="btn-youtube"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Youtube
-            </Link>
-            <Link
-              to={"https://www.tiktok.com/@kayna_channel"}
+            </a>
+            <a
+              href="https://www.tiktok.com/@kayna_channel"
               className="btn-tiktik"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Tiktok
-            </Link>
-            <Link
-              to={"https://www.facebook.com/KaynaVTB"}
+            </a>
+            <a
+              href="https://www.facebook.com/KaynaVTB"
               className="btn-facebook"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Facebook
-            </Link>
+            </a>
           </div>
         </div>
         <div className="status-youtube">
           <div className="youtube-follow">
             <h2>Follow</h2>
-            <span>2000</span>
+            <span>{channelData.subscriberCount}</span>
           </div>
           <div className="youtube-video">
             <h2>Video</h2>
-            <span>500</span>
+            <span>{channelData.videoCount}</span>
           </div>
           <div className="youtube-view">
             <h2>View</h2>
-            <span>10000000</span>
+            <span>{channelData.viewCount}</span>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Main;
