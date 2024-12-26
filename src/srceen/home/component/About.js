@@ -5,7 +5,7 @@ function About() {
   return (
     <div className="container-main-about">
       <div className="about-col">
-        <img src="vtuber.png" />
+        <img src="vtuber.png" alt="vtuber-kayna" />
         <div class="about-text">
           <h2>About Me</h2>
           <h5>
