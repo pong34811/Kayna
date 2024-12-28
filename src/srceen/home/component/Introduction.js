@@ -45,7 +45,7 @@ const Main = () => {
           <h3>I'am Vtuber From Thailand</h3>
           <div className="social-media">
             <Link
-              href="https://www.youtube.com/@KaynaVtuberTH"
+              to="https://www.youtube.com/@KaynaVtuberTH"
               className="btn-youtube"
               target="_blank"
               rel="noopener noreferrer"
@@ -53,7 +53,7 @@ const Main = () => {
               Youtube
             </Link>
             <Link
-              href="https://www.tiktok.com/@kayna_channel"
+              to="https://www.tiktok.com/@kayna_channel"
               className="btn-tiktik"
               target="_blank"
               rel="noopener noreferrer"
@@ -61,7 +61,7 @@ const Main = () => {
               Tiktok
             </Link>
             <Link
-              href="https://www.facebook.com/KaynaVTB"
+              to="https://www.facebook.com/KaynaVTB"
               className="btn-facebook"
               target="_blank"
               rel="noopener noreferrer"
