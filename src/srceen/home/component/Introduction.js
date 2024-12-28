@@ -22,10 +22,9 @@ const Main = () => {
   }, []);
 
   const backgroundImage = {
-    backgroundImage: `url(${process.env.PUBLIC_URL}/kayna_maid_bg.png)`,
+    backgroundImage: `url(${process.env.PUBLIC_URL}/kayna_maid_bg.webp)`,
     height: "120vh",
     width: "100%",
-    backgroundPosition: "25% 50%",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
   };
@@ -41,34 +40,34 @@ const Main = () => {
         <div className="h4-nice-to-meet-you">
           <h4>Nice to meet you, Hello</h4>
           <h1>
-            My name is <span>Kayna</span>
+            My name is Kayna
           </h1>
           <h3>I'am Vtuber From Thailand</h3>
           <div className="social-media">
-            <a
+            <Link
               href="https://www.youtube.com/@KaynaVtuberTH"
               className="btn-youtube"
               target="_blank"
               rel="noopener noreferrer"
             >
               Youtube
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.tiktok.com/@kayna_channel"
               className="btn-tiktik"
               target="_blank"
               rel="noopener noreferrer"
             >
               Tiktok
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.facebook.com/KaynaVTB"
               className="btn-facebook"
               target="_blank"
               rel="noopener noreferrer"
             >
               Facebook
-            </a>
+            </Link>
           </div>
         </div>
         <div className="status-youtube">

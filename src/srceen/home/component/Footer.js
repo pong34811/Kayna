@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import './Footer.css';
 
 function Footer() {
   return (
-    <div>footer1</div>
-  )
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="copyright">
+          © {new Date().getFullYear()} Kayna. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
