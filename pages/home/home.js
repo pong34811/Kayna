@@ -344,7 +344,6 @@ function Home() {
         </div>
       </section>
 
-
       {/* Projects Section */}
       <section id="projects" className="py-24">
         <div className="container mx-auto px-6">
