@@ -11,6 +11,7 @@ function Home() {
   const [currentImage, setCurrentImage] = useState(0);
   const images = ["/vtuber_19-1-2025.webp", "/kayna_maid_bg.webp"];
   const [currentPage, setCurrentPage] = useState(0); // จัดการหน้า
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
   const games = [
@@ -21,7 +22,7 @@ function Home() {
     { name: 'Line Ranger', icon: '/games/Line Ranger.webp' },
     { name: 'Seven Knights Idle Adventure', icon: '/games/Seven Knights Idle Adventure.webp' }
   ];
-  
+
 
   const achievements = [
     { number: channelData.subscriberCount, label: 'Subscribers' },
@@ -99,25 +100,34 @@ function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
   return (
     <div className="bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800 min-h-screen">
-      {/* Header Section */}
-      <header         
-          className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-white/80 backdrop-blur-md shadow-lg' 
+      <header
+        className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
+            ? 'bg-white/80 backdrop-blur-md shadow-lg'
             : 'bg-transparent'
-        }`}>
+          }`}
+      >
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold text-blue-600">
             Kayna<span className="text-gray-700">Portfolio</span>
           </div>
-          <nav>
+
+          {/* Navigation for Desktop */}
+          <nav className="hidden md:flex">
             <ul className="flex space-x-6">
               {['Home', 'Projects', 'About', 'Contact'].map((item) => (
                 <li key={item}>
@@ -131,6 +141,44 @@ function Home() {
               ))}
             </ul>
           </nav>
+
+          {/* Hamburger Menu for Mobile */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden flex items-center space-x-2"
+          >
+            <div className={`w-6 h-1 bg-gray-700 transition-transform ${isMenuOpen ? 'rotate-45' : ''}`}></div>
+            <div className={`w-6 h-1 bg-gray-700 transition-opacity ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></div>
+            <div className={`w-6 h-1 bg-gray-700 transition-transform ${isMenuOpen ? '-rotate-45' : ''}`}></div>
+          </button>
+
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <nav className="md:hidden absolute top-0 left-0 w-full bg-white/90 shadow-lg py-4 px-6 flex flex-col space-y-4">
+              {/* Close Button */}
+              <button
+                className="self-end text-gray-700 text-xl"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                &times; {/* สัญลักษณ์ปิด */}
+              </button>
+
+              <ul className='flex flex-col space-y-6 items-center'>
+                {['Home', 'Projects', 'About', 'Contact'].map((item) => (
+                  <li key={item}>
+                    <a
+                      href={`#${item.toLowerCase()}`}
+                      className="text-gray-700 hover:text-blue-600 transition text-lg font-semibold"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
+
         </div>
       </header>
 
@@ -192,7 +240,7 @@ function Home() {
               <div className="relative group mb-8">
                 <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-700"></div>
                 <div className="relative bg-white rounded-lg p-2">
-                  <div className="overflow-hidden rounded-lg">
+                  <div className="overflow-hidden rounded-lg shadow-lg">
                     <img
                       src="/1.webp"
                       alt="Kayna VTuber"
@@ -275,7 +323,6 @@ function Home() {
                     </button>
                   </div>
                 </div>
-
               </div>
 
               {/* MAMA & PAPA Cards */}
@@ -296,6 +343,7 @@ function Home() {
           </div>
         </div>
       </section>
+
 
       {/* Projects Section */}
       <section id="projects" className="py-24">
@@ -337,15 +385,15 @@ function Home() {
           <p className="text-lg">Follow me:</p>
           <div className="flex justify-center space-x-6 mt-4">
             {socialLinks.map((link, index) => (
-              <a
+              <Link
                 key={index}
-                href={link.url}
+                to={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-2xl hover:text-blue-600 transition"
               >
                 {link.icon} {/* ใช้ไอคอนจาก React Icons */}
-              </a>
+              </Link>
             ))}
           </div>
           <p className="mt-6">&copy; 2025 Kayna. All Rights Reserved.</p>
