@@ -1,80 +1,67 @@
 import React from "react";
+import { FaYoutube, FaFacebook, FaTwitter, FaTiktok } from "react-icons/fa";
+import Link from 'next/link'
 
 function FooterSection() {
   return (
     <>
-      <footer className="py-10 md:py-16 mb-20 md:mb-40 lg::mb-52">
+      <footer className="py-10 md:py-16 ">
         <div className="container max-w-screen-xl mx-auto px-4">
           <div className="text-center">
-            <h1 className="font-medium text-gray-700 text-4xl md:text-5xl mb-5">
-              Testimonial
+            <h1 className="font-medium text-pink-700 text-3xl md:text-4xl mb-5">
+              ติดต่อ Kayna
             </h1>
 
-            <p className="font-normal text-gray-400 text-md md:text-lg mb-20">
-              I’m not currently taking on new client work but feel free to
-              contact me for any <br /> other inquiries.
+            <p className="font-normal text-pink-600 text-md md:text-lg mb-10">
+              สามารถติดตามและติดต่อฉันได้ผ่านช่องทางเหล่านี้เลยนะคะ! 💖
             </p>
 
-            <div className="flex items-center justify-center space-x-8">
-              <a
-                href="#"
-                className="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500"
+            <div className="flex items-center justify-center space-x-6">
+              {/* YouTube */}
+              <Link
+                href="https://www.youtube.com/channel/UCC_P34t35REbiPzbHO_bifA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-pink-200 hover:bg-pink-300 transition ease-in-out duration-300"
               >
-                <i
-                  data-feather="twitter"
-                  className="text-gray-500 hover:text-gray-800 transition ease-in-out duration-500"
-                ></i>
-              </a>
+                <FaYoutube className="text-pink-700 text-2xl hover:text-pink-800" />
+              </Link>
 
-              <a
-                href="#"
-                className="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500"
+              {/* Facebook */}
+              <Link
+                href="https://www.facebook.com/KaynaVTB"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-pink-200 hover:bg-pink-300 transition ease-in-out duration-300"
               >
-                <i
-                  data-feather="dribbble"
-                  className="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"
-                ></i>
-              </a>
+                <FaFacebook className="text-pink-700 text-2xl hover:text-pink-800" />
+              </Link>
 
-              <a
-                href="#"
-                className="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500"
+              {/* X (Twitter) */}
+              <Link
+                href="https://x.com/kaynavtuber"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-pink-200 hover:bg-pink-300 transition ease-in-out duration-300"
               >
-                <i
-                  data-feather="facebook"
-                  className="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"
-                ></i>
-              </a>
+                <FaTwitter className="text-pink-700 text-2xl hover:text-pink-800" />
+              </Link>
 
-              <a
-                href="#"
-                className="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500"
+              {/* TikTok */}
+              <Link
+                href="https://www.tiktok.com/@kayna_channel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-pink-200 hover:bg-pink-300 transition ease-in-out duration-300"
               >
-                <i
-                  data-feather="codepen"
-                  className="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"
-                ></i>
-              </a>
+                <FaTiktok className="text-pink-700 text-2xl hover:text-pink-800" />
+              </Link>
+            </div>
 
-              <a
-                href="#"
-                className="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500"
-              >
-                <i
-                  data-feather="at-sign"
-                  className="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"
-                ></i>
-              </a>
-
-              <a
-                href="#"
-                className="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500"
-              >
-                <i
-                  data-feather="instagram"
-                  className="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"
-                ></i>
-              </a>
+            <div className="mt-10">
+              <p className="font-normal text-pink-600 text-sm md:text-base">
+                © 2025 Kayna Channel. All rights reserved.
+              </p>
             </div>
           </div>
         </div>

@@ -1,20 +1,17 @@
-import React from "react";
+"use client";
 
+import React from "react";
 import HeroSection from "../components/HeroSection";
 import ProfileSection from "../components/ProfileSection";
 import FooterSection from "../components/FooterSection";
 
-
-function Homepage() {
+export default function Homepage() {
   return (
     <div className="container-fluid">
-      <HeroSection />
-      <ProfileSection />
-      <FooterSection />
-     
-      
+
+        <HeroSection />
+        <ProfileSection />
+        <FooterSection />
     </div>
   );
 }
-
-export default Homepage;
