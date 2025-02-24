@@ -37,14 +37,14 @@ export default function HeroSection() {
         <div className="relative z-10 text-white px-6">
           {/* Small Heading - Fastest Movement */}
           <Parallax speed={-15} className="mb-10">
-            <h6 className="text-xl md:text-3xl uppercase tracking-wide mb-4 drop-shadow-3xl">
+            <h6 className="text-xl md:text-3xl  uppercase tracking-wide mb-4 drop-shadow-3xl">
               🎀 ยินดีที่ได้รู้จัก! 🎀
             </h6>
           </Parallax>
 
           {/* Main Title - Very Fast Movement */}
           <Parallax speed={-15} className="mb-10">
-            <h1 className="text-5xl md:text-8xl font-bold mb-4 drop-shadow-2xl">
+            <h1 className="text-4xl md:text-8xl  font-bold mb-4 drop-shadow-2xl">
               My Name is <span className="text-pink-400">Kayna</span>
             </h1>
           </Parallax>
