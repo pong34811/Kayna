@@ -5,20 +5,20 @@ import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 export default function HeroSection() {
   return (
     <ParallaxProvider>
-      <section className="relative h-screen w-full flex items-center justify-center text-center overflow-hidden">
+      <section className="relative h-screen  flex items-center justify-center text-center overflow-hidden">
         {/* Background Layer with Increased Speed */}
-        <Parallax speed={-60} className="absolute inset-0">
+        <div
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{
+            backgroundImage: 'url("/bedroom.png")',
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        />
+        <Parallax speed={-50} className="absolute inset-0">
           <div className="w-full h-full relative">
             <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: 'url("/bedroom.png")',
-                backgroundPosition: "10% 1%",
-                backgroundSize: "cover",
-              }}
-            />
-            <div
-              className="absolute inset-0 mt-10"
+              className="absolute inset-0 w-full h-full object-cover mt-10 "
               style={{
                 backgroundImage: 'url("/1.webp")',
                 backgroundPosition: "10% 1%",

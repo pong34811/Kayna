@@ -7,8 +7,7 @@ import FooterSection from "../components/FooterSection";
 
 export default function Homepage() {
   return (
-    <div className="container-fluid">
-
+    <div className="container-fluid" style={{ overflowX: "hidden" }}>
         <HeroSection />
         <ProfileSection />
         <FooterSection />
